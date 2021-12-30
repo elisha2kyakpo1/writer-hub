@@ -1,6 +1,6 @@
-<div class="cover">
+<div class="d-flex">
   <p class="notice"><%= notice %></p>
-  <div class="signup-page mt-40">
+  <div class="w-50 mx-auto mt-40">
     <div class="sign-div">
       <div class="border-form-div">
         <%= form_for(@user, class: "")  do |f| %>
@@ -25,7 +25,7 @@
         <div class="field">
 
           <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'name', class: 'form-control', :required => true %><br>
-          <%= f.password_field :password, placeholder: 'password', class: 'form-control', :required => true %>
+          <%= f.password_field :password, placeholder: 'password', class: 'form-control', :required => true %><br>
           <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: 'form-control' %><br>
         </div>
         <div class="actions">
