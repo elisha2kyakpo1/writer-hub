@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find(params[:id])
+    user = User.find_by_name(params[:name])
     if user
       session[:author_id] = user.id
-      redirect_to tweets_path, notice: 'Logged in succussfully!'
+      redirect_to posts_path, notice: 'Logged in succussfully!'
     else
       render 'new', notice: 'The name is invalid'
     end

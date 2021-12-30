@@ -11,6 +11,10 @@
 
   <tbody>
     <% @posts.each do |post| %>
+      <div>
+        <h4><%= post.name %></h4>
+        <p><%= post.body %></p>
+      </div>
       <tr>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>

@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:author_id] = @user.id
-      redirect_to tweets_path,
+      redirect_to posts_path,
                   notice: "Hi #{@user.name}, you successfully Signed up!"
     else
       render 'new', notice: 'This name is taken!'
@@ -46,6 +46,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :password_confimation)
+    params.require(:user).permit(:name, :password, :password_confirmation)
   end
 end

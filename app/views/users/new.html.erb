@@ -24,11 +24,12 @@
           
         <div class="field">
 
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'name', class: 'text', :required => true %><br>
-          <%= f.password_field : placeholder: 'password', class: 'text', :required => true %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'name', class: 'form-control', :required => true %><br>
+          <%= f.password_field :password, placeholder: 'password', class: 'form-control', :required => true %>
+          <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: 'form-control' %><br>
         </div>
         <div class="actions">
-          <%= f.submit "Sign up", class: 'submit' %>
+          <%= f.submit "Sign up", class: 'btn btn-primary' %>
         </div>
       <% end %>
         <p class=>Aready a member?<%= link_to 'Sign In', new_session_path, class: 'signup'%></p>
