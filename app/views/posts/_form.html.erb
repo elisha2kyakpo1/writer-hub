@@ -15,7 +15,7 @@
     <% if current_user && current_user.admin? %>
       <div>
         <%= form.text_field :name, class: 'form-control', placeholder: 'Title' %>
-        <%= form.text_area :body, class: 'form-control',cols: 78, placeholder: 'Compose new post' %>
+        <%= form.rich_text_area :body, class: 'form-control',cols: 78, placeholder: 'Compose new post' %>
       </div>
       <%= form.submit class: 'btn btn-primary' %>
     <%end%>

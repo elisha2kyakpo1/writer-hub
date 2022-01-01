@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: %i[create]
   def index
     @users = User.order('created_at DESC')
   end
