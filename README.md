@@ -1,3 +1,6 @@
+# Writer-hub
+A blog app built with Ruby on Rails, Postgresql, action text. The app helps users create, edit, delete, or update blog posts and post images.
+
 ## Built with
 * Postgresql
 * rubocop linters
