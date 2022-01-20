@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_111556) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
+    t.integer "author_id"
     t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -81,5 +81,5 @@ ActiveRecord::Schema.define(version: 2022_01_14_111556) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "users", column: "author_id"
 end
