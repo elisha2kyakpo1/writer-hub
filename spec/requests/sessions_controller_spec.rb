@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Sessions', type: :controller do
-
   subject do
     described_class.new(email: 'elisha@gmail.com',
                         encrypted_password: 'dsfsfsdfsdf')

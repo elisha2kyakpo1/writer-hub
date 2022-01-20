@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.includes(:author, :comment)
+    @posts = Post.all.includes(:author, :comments)
   end
 
   # GET /posts/1 or /posts/1.json

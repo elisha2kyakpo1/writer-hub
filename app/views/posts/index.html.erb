@@ -15,8 +15,13 @@
         <h4><%= post.name %></h4>
         <p><%= post.body %></p>
         <div>
-          <p><%= post.comment%></p>
-          
+          <div class='post-comments-section'>
+            <%= render partial: 'comments/comments', collection: post.comments %>
+            <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
+              <%= form.rich_text_area :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
+              <%= form.submit 'Comment', class: 'btn btn-secondary' %>
+            <% end %>
+          </div>
         </div>
         <span><%= link_to 'Show', post %></span>
       </div>
@@ -31,7 +36,7 @@
     <% end %>
   </div>
   <div>
-    <% if current_user || current_user.admin? %>
+    <% if current_user %>
       <%= link_to 'New Post', new_post_path %>
     <%end%>
   </div>
