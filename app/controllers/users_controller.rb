@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.order('created_at DESC')
+    @users = User.includes(:posts, :comments)
   end
 
   def new
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @created_posts = @user.posts
   end
 
   def edit

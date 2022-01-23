@@ -1,0 +1,9 @@
+<section>
+  <h4><%=@user.name %></h4>
+  <% if @user.posts.any? %>
+    <%@created_posts.each do |user| %></p>
+      <p><%=user.body %></p>
+      <p><%=user.body %></p>
+    <%end%>
+  <%end%>
+</section>
