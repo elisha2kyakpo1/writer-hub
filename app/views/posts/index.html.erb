@@ -8,34 +8,33 @@
     <% @posts.each do |post| %>
       <div class="post">
         <div>
-          <h6><%= post.author.name %></h6>
 					<small>Created <%= time_ago_in_words(post.created_at) %> ago </small>
 						<small>by <%= link_to post.author.name, user_path(post.author), class: 'user_link' %></small>
         </div>
         <h4><%= post.name %></h4>
         <p><%= post.body %></p>
         <div>
+          <div class="mb-5">
+            <% if current_user && current_user.admin?%>
+              <span><%= link_to 'Edit', edit_post_path(post) %></span>
+              <span><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+            <%end%>
+          </div>
+        </div>
+        <div>
           <div class='post-comments-section'>
             <%= render partial: 'comments/comments', collection: post.comments %>
             <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
               <%= form.rich_text_area :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
+              <%= display_errors(post.comments.new) %>
               <%= form.submit 'Comment', class: 'btn btn-secondary' %>
             <% end %>
           </div>
         </div>
-        <span><%= link_to 'Show', post %></span>
-      </div>
-
-      
-      <div>
-        <% if current_user && current_user.admin?%>
-          <span><%= link_to 'Edit', edit_post_path(post) %></span>
-          <span><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-        <%end%>
       </div>
     <% end %>
   </div>
-  <div>
+  <div class="mt-5">
     <% if current_user %>
       <%= link_to 'New Post', new_post_path %>
     <%end%>

@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.all
+    @posts = Post.all
+    @post = Post.find(params[:post_id])
   end
 
   # GET /comments/1 or /comments/1.json
@@ -20,7 +21,6 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = Comment.new(comment_params)
-    @posts = Post.all
     @comment.post_id = params[:post_id]
     @comment.author = current_user
 
