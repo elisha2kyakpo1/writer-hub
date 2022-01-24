@@ -4,14 +4,11 @@ RSpec.describe 'comments/index', type: :view do
   before(:each) do
     assign(:comments, [
              Comment.create!(
-               content: 'MyText',
-               references: '',
-               references: ''
+               content: 'MyText'
+
              ),
              Comment.create!(
-               content: 'MyText',
-               references: '',
-               references: ''
+               content: 'MyText'
              )
            ])
   end
