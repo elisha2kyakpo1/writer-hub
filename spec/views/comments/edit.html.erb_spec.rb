@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe 'comments/edit', type: :view do
   before(:each) do
     @comment = assign(:comment, Comment.create!(
-                                  content: 'MyText'
+                                  author: 'Elisha',
+                                  post: 'The first post',
+                                  content: 'My first comment'
                                 ))
   end
 
