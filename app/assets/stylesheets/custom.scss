@@ -4,6 +4,18 @@
   padding: 0 10px;
 }
 
+.signin,
+.sign-up {
+  box-shadow:
+  0 0.06875rem 0.0875rem rgb(4, 9, 20 / 3%),
+  0 0.0375rem 0.10625rem rgb(4, 9, 20 / 3%),
+  0 0.05rem 0.03125rem rgb(4, 9, 20 / 5%),
+  0 0.025rem 0.0875rem rgb(4, 9, 20 / 3%);
+  padding: 15px;
+  border-radius: 8px;
+  width: 80%;
+}
+
 body {
   margin: 0 20px;
 }
