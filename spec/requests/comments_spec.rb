@@ -15,13 +15,8 @@ require 'rails_helper'
 RSpec.describe '/comments', type: :request do
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
-  end
-
-  let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
-  end
+  let(:valid_attributes) { Comment.create(author: 1, post: 'getting started', content: "I'm commenting" ) }
+  let(:invalid_attributes) { Comment.create(post: 'getting started', content: "I'm commenting" ) }
 
   describe 'GET /index' do
     it 'renders a successful response' do

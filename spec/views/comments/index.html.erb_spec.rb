@@ -4,7 +4,6 @@ RSpec.describe 'comments/index', type: :view do
   before(:each) do
     assign(:comments, [
              Comment.create!(
-               author: 'Elisha',
                post: 'My first post',
                content: 'My first comment'
 
