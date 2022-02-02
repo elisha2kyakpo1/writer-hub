@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<p id="notice"><%= alert %></p>
 
 <h1>Posts</h1>
 
@@ -24,7 +25,7 @@
         <div>
           <div class='post-comments-section'>
             <%= render partial: 'comments/comments', collection: post.comments %>
-            <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
+            <%= form_with url: post_comments_path(post), method: :post do |form| %>
               <%= form.rich_text_area :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
               <%= display_errors(post.comments.new) %>
               <%= form.submit 'Comment', class: 'btn btn-secondary' %>
