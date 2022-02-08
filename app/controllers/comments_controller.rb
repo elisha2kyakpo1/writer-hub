@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = @post.comments.new(commentor_id: params[:commentor_id])
+    @comment = @post.comments.new(parent_id: params[:parent_id])
   end
 
   # GET /comments/1/edit

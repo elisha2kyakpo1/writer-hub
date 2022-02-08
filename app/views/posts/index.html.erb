@@ -27,7 +27,7 @@
             <%= render partial: 'comments/comments', collection: post.comments %>
             <%= form_with url: post_comments_path(post), method: :post do |form| %>
               <%= form.rich_text_area :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
-              <%= link_to 'reply', new_post_comment_path(@post, parent_id: comment.id), remote: true, class: 'd-block' %>
+              <%#= link_to 'reply', new_post_comment_path(@post, parent_id: comment.id), remote: true, class: 'd-block' %>
               <%= display_errors(post.comments.new) %>
               <%= form.submit 'Comment', class: 'btn btn-secondary' %>
             <% end %>
