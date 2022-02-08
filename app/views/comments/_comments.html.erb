@@ -1,11 +1,16 @@
 <div class="post-comments">
   <p>
-    <b><%= comments.author.name %>:</b> <%= comments.content %>
+    </b> <%= comments.content %>
   </p>
+    <small><%= link_to comments.author.name %>commented <%= time_ago_in_words(comments.created_at) %> ago. </small>
+    <%= link_to 'Reply', remote: true, class: 'reply' %>
+  <div class="comment-form">
+    <%= render partial: 'comments/reply_form' %>
+  </div>
   <% if comments.replies.any? %>
     <% comment.replies.each do |reply| %> 
       <%= render partial: 'comments/reply', locals: { reply: reply } %>
     <% end %>
   <% end %>
-  <span> <%= comments.created_at.strftime("%Y/%m/%d") %> </span>
 </div>
+
