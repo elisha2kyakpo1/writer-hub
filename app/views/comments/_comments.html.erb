@@ -2,7 +2,7 @@
   <p>
     </b> <%= comments.content %>
   </p>
-    <small><%= link_to comments.author.name %>commented <%= time_ago_in_words(comments.created_at) %> ago. </small>
+    <small><%= link_to comments.author.name %>commented <%= time_ago_in_words(comments.created_at, include_seconds: true) %> ago. </small>
     <%= link_to 'Reply', remote: true, class: 'reply' %>
   <div class="comment-form">
     <%= render partial: 'comments/reply_form' %>
