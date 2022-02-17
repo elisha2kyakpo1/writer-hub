@@ -6,7 +6,6 @@ RSpec.describe 'comments/index', type: :view do
              Comment.create!(
                post: 'My first post',
                content: 'My first comment'
-
              )
            ])
   end

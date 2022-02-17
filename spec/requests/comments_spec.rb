@@ -1,18 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe '/comments', type: :request do
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     {
       author: User,
       post: Post,
       content: 'It is an article content.'
     }
-  }
-  let(:invalid_attributes) {
+  end
+  let(:invalid_attributes) do
     {
       contenxt: null
     }
-  }
+  end
 
   describe 'GET /index' do
     it 'renders a successful response' do

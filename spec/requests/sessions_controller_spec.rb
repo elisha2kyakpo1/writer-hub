@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Sessions', type: :controller do
   subject do
     User.new(name: 'elisha',
-                        password: 'dsfsfsdfsdf')
+             password: 'dsfsfsdfsdf')
   end
 
   describe 'Validations' do
