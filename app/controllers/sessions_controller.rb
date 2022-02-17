@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_name(params[:name])
+    user = User.find_by_email(params[:email])
     if user
       session[:author_id] = user.id
       redirect_to posts_path, notice: 'Logged in succussfully!'
     else
-      render 'new', notice: 'The name is invalid'
+      render 'new', alert: @user.errors.full_messages.join('. ').to_s
     end
   end
 
