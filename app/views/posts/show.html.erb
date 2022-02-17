@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="notice text-warning"><%= notice %></p>
 
 <% if current_user && current_user.admin? %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
